@@ -2,6 +2,9 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    # puts @order.to_yaml
+    @line_items = LineItem.where(order_id: @order.id)
+    puts "this is what im looking for", @line_items.to_yaml
   end
 
   def create

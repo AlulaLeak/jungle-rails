@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :users
   root to: 'products#index'
 
+  get '/about' => 'about#index'
+
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
   
@@ -18,6 +20,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
+    resources :categories, only: [:new, :index, :create]
   end
   
   get 'signup', to: 'users#new', as: 'signup'
