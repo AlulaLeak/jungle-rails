@@ -11,3 +11,4 @@ class CreateLineItems < ActiveRecord::Migration
     end
   end
 end
+# 
