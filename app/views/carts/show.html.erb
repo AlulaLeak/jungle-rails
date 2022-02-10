@@ -4,6 +4,8 @@
     <h1>My Cart</h1>
   </header>
 
+  <% if cart.size > 0 %>
+
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -46,6 +48,13 @@
           data-currency="cad">
         </script>
       <% end %>
+
+      <% else %>
+
+      <h1>Your cart is empty.</h1>  
+      <%= link_to 'Return Home to Continue Shopping.', :root %>
+  <% end %>
+
     </div>
   </div>
 
